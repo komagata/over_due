@@ -5,11 +5,15 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "over_due"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Send alert over due tasks.}
+    gem.description = %Q{Send alert over due tasks.}
     gem.email = "komagata@gmail.com"
     gem.homepage = "http://github.com/komagata/over_due"
-    gem.authors = ["Masaki Komagata"]
+    gem.authors = ["Masaki KOMAGATA"]
+    gem.files = FileList["lib/*.rb", "bin/*", "test/*.rb", "*.gemspec"].to_a
+    gem.add_dependency 'pit'
+    gem.add_dependency 'actionmailer'
+    gem.add_dependency 'mechanize'
     gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
