@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{over_due}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Masaki KOMAGATA"]
-  s.date = %q{2009-11-23}
+  s.date = %q{2009-11-24}
   s.default_executable = %q{over_due}
   s.description = %q{Send alert over due tasks.}
   s.email = %q{komagata@gmail.com}
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.files = [
     "bin/over_due",
      "lib/over_due.rb",
+     "over_due.gemspec",
      "test/over_due_test.rb",
      "test/test_helper.rb"
   ]
