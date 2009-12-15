@@ -73,7 +73,7 @@ class OverDue
     end
 
     body = <<-EOS
-#{pics.uniq.join("さん、")}さん
+#{pics.uniq.join("さん ")}
 
 お疲れ様です。駒形です。
 
