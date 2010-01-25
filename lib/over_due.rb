@@ -72,8 +72,10 @@ class OverDue
       pics << task["担当者"]
     end
 
+    pics = pics.uniq.delete_if {|n| n == ""}
+
     body = <<-EOS
-#{pics.uniq.join("さん ")}
+#{pics.join("さん ")}
 
 お疲れ様です。駒形です。
 
@@ -88,6 +90,27 @@ class OverDue
       @mail_to,
       "期限切れのタスクについて",
       body)
+
+    pics.each do |pic|
+      body = <<- EOS
+#{pic}さん
+
+お疲れ様です。駒形です。
+
+再発防止と他のメンバーとの事例共有のため、
+タスクの期限が過ぎてしまった理由とその対策をお教えください。
+
+参照：
+https://sites.google.com/a/actindi.net/share/project/shigoto-no-kouritsu-ka-purojekuto#ticket
+
+以上、以上宜しくお願い致します。
+      EOS
+
+      JisMailer.deliver_message(
+        @mail_to,
+        "期限切れのタスクの原因と対策",
+        body)
+    end
   end
 end
 
