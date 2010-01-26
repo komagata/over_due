@@ -64,8 +64,6 @@ class OverDue
   end
 
   def send
-    return nil unless @tasks.size > 0
-
     pics = []
     tasks = []
     @tasks.each do |task|
@@ -73,6 +71,8 @@ class OverDue
     end
 
     pics = pics.uniq.delete_if {|n| n == ""}
+
+    return nil unless pics.size > 0
 
     body = <<-EOS
 #{pics.join("さん ")}
@@ -92,7 +92,7 @@ class OverDue
       body)
 
     pics.each do |pic|
-      body = <<- EOS
+      body = <<-EOS
 #{pic}さん
 
 お疲れ様です。駒形です。
