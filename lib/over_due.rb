@@ -75,7 +75,7 @@ class OverDue
     return nil unless pics.size > 0
 
     body = <<-EOS
-#{pics.join("さん ")}
+#{pics.join("さん ")}さん
 
 お疲れ様です。駒形です。
 
